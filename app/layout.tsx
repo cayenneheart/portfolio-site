@@ -19,14 +19,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | フルスタックエンジニア',
+  title: 'Kaien Komine | 起業家',
   description:
-    'フルスタックエンジニアのポートフォリオサイト。Web開発、モバイルアプリ開発の実績を紹介しています。',
-  keywords: ['ポートフォリオ', 'エンジニア', 'Web開発', 'React', 'Next.js'],
-  authors: [{ name: 'Taro Yamada' }],
+    '小峯海円のポートフォリオサイト。「おもろい人生にする」をモットーに、起業・ビジネス開発・グローバルな挑戦を続けています。',
+  keywords: ['小峯海円', '起業家', 'STARTiX', 'AXeler', '筑波大学', 'スタートアップ'],
+  authors: [{ name: 'Kaien Komine' }],
   openGraph: {
-    title: 'Portfolio | フルスタックエンジニア',
-    description: 'フルスタックエンジニアのポートフォリオサイト',
+    title: 'Kaien Komine | 起業家',
+    description: '「おもろい人生にする」をモットーに活動する起業家のポートフォリオ',
     type: 'website',
     locale: 'ja_JP',
   },

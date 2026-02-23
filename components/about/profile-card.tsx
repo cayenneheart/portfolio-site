@@ -95,7 +95,7 @@ export function ProfileCard() {
               </motion.div>
               <motion.p
                 variants={itemVariants}
-                className="mt-5 text-muted-foreground leading-relaxed text-lg"
+                className="mt-5 text-muted-foreground leading-relaxed text-lg whitespace-pre-line"
               >
                 {profile.bio}
               </motion.p>

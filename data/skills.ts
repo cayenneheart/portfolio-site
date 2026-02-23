@@ -2,41 +2,25 @@ import { SkillCategory } from '@/types';
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'フロントエンド',
+    name: 'ビジネス',
     skills: [
-      { name: 'React', level: 'expert' },
-      { name: 'Next.js', level: 'expert' },
-      { name: 'TypeScript', level: 'expert' },
-      { name: 'Tailwind CSS', level: 'advanced' },
-      { name: 'Vue.js', level: 'intermediate' },
+      { name: '事業企画・開発', level: 'advanced' },
+      { name: 'ピッチ・プレゼン', level: 'advanced' },
+      { name: 'プロジェクト管理', level: 'intermediate' },
+      { name: '組織運営・リーダーシップ', level: 'intermediate' },
+      { name: 'マーケティング', level: 'intermediate' },
+      { name: '英語', level: 'advanced' },
     ],
   },
   {
-    name: 'バックエンド',
+    name: 'バイブコーディング / ノーコード',
     skills: [
-      { name: 'Node.js', level: 'advanced' },
-      { name: 'Python', level: 'advanced' },
-      { name: 'Go', level: 'intermediate' },
-      { name: 'PostgreSQL', level: 'advanced' },
-      { name: 'MongoDB', level: 'intermediate' },
-    ],
-  },
-  {
-    name: 'インフラ・DevOps',
-    skills: [
-      { name: 'AWS', level: 'advanced' },
-      { name: 'Docker', level: 'advanced' },
-      { name: 'Kubernetes', level: 'intermediate' },
-      { name: 'Terraform', level: 'intermediate' },
-      { name: 'GitHub Actions', level: 'advanced' },
-    ],
-  },
-  {
-    name: 'その他',
-    skills: [
-      { name: 'Git', level: 'expert' },
-      { name: 'Figma', level: 'intermediate' },
-      { name: 'Agile/Scrum', level: 'advanced' },
+      { name: 'Claude Code', level: 'advanced' },
+      { name: 'Cursor', level: 'intermediate' },
+      { name: 'FlutterFlow', level: 'beginner' },
+      { name: 'Notion', level: 'advanced' },
+      { name: 'Dify', level: 'intermediate' },
+      { name: 'n8n', level: 'beginner' },
     ],
   },
 ];
