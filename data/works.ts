@@ -102,31 +102,6 @@ TIB（Tokyo Innovation Base）主催の北欧派遣プログラムに応募・�
   },
   {
     id: '4',
-    slug: 'note-auto-generator',
-    title: 'note自動生成ツール',
-    description:
-      'AIを活用してnote記事を自動生成するツール。バイブコーディングで開発。',
-    thumbnail: '/images/works/note-generator.svg',
-    technologies: ['Claude Code', 'AI', 'ノーコード', '自動化'],
-    category: 'tool',
-    startDate: '2025-01',
-    featured: false,
-    content: `
-## 概要
-AIを活用してnote記事を自動生成するツール。
-
-## 機能
-- テーマを入力するだけで記事を自動生成
-- AIによる文章構成・執筆
-- 効率的なコンテンツ制作をサポート
-
-## 技術
-- Claude Codeを使ったバイブコーディング
-- AI APIの活用
-    `,
-  },
-  {
-    id: '5',
     slug: 'portfolio-site',
     title: 'ポートフォリオサイト',
     description:
