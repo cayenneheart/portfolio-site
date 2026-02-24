@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram, MapPin, Sparkles } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,7 +12,7 @@ const socialIcons = {
   github: Github,
   twitter: Twitter,
   linkedin: Linkedin,
-  email: Mail,
+  instagram: Instagram,
 };
 
 const containerVariants = {

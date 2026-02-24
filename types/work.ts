@@ -5,7 +5,7 @@ export interface Work {
   description: string;
   thumbnail: string;
   technologies: string[];
-  category: 'web' | 'mobile' | 'design' | 'other';
+  category: 'web' | 'mobile' | 'design' | 'business' | 'community' | 'event' | 'tool' | 'other';
   url?: string;
   github?: string;
   startDate: string;
