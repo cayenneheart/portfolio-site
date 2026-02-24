@@ -7,7 +7,7 @@ export const works: Work[] = [
     title: 'AXeler',
     description:
       '2025年10月に起業。AI活用支援やシステム開発支援を中心に、企業のDX推進をサポート。',
-    thumbnail: '/images/works/axeler.png',
+    thumbnail: '/images/works/axeler.svg',
     technologies: ['事業開発', 'AI活用', 'プロジェクト管理', 'コンサルティング'],
     category: 'business',
     startDate: '2025-10',
@@ -97,7 +97,7 @@ TIB（Tokyo Innovation Base）主催の北欧派遣プログラムに応募・�
     title: 'note自動生成ツール',
     description:
       'AIを活用してnote記事を自動生成するツール。バイブコーディングで開発。',
-    thumbnail: '/images/works/note-generator.png',
+    thumbnail: '/images/works/note-generator.svg',
     technologies: ['Claude Code', 'AI', 'ノーコード', '自動化'],
     category: 'tool',
     startDate: '2025-01',
@@ -122,7 +122,7 @@ AIを活用してnote記事を自動生成するツール。
     title: 'ポートフォリオサイト',
     description:
       'Claude Codeを使ってバイブコーディングで作成したポートフォリオサイト。Next.js + shadcn/ui。',
-    thumbnail: '/images/works/portfolio.png',
+    thumbnail: '/images/works/portfolio.svg',
     technologies: ['Claude Code', 'Next.js', 'Tailwind CSS', 'shadcn/ui', 'Dify'],
     category: 'web',
     github: 'https://github.com/cayenneheart/portfolio-site',
