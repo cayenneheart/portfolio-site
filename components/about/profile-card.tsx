@@ -53,7 +53,7 @@ export function ProfileCard() {
             >
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-75 blur-sm animate-gradient-x" />
               <Avatar className="relative h-36 w-36 border-4 border-background shadow-2xl md:h-44 md:w-44">
-                <AvatarImage src={profile.avatar} alt={profile.name} />
+                <AvatarImage src={profile.avatar} alt={profile.name} className="object-cover" />
                 <AvatarFallback className="text-5xl bg-gradient-to-br from-purple-500 to-pink-500 text-white">
                   {profile.name.charAt(0)}
                 </AvatarFallback>
