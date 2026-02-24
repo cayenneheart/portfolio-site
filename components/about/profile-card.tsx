@@ -122,8 +122,8 @@ export function ProfileCard() {
                       >
                         <Link
                           href={link.url}
-                          target={link.platform !== 'email' ? '_blank' : undefined}
-                          rel={link.platform !== 'email' ? 'noopener noreferrer' : undefined}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label={link.label}
                         >
                           <Icon className="h-5 w-5" />
