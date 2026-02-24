@@ -28,7 +28,7 @@ export function Header() {
               </div>
             </div>
             <span className="text-xl font-bold">
-              <span className="gradient-text">Portfolio</span>
+              <span className="gradient-text">Kaien</span>
             </span>
           </motion.div>
         </Link>
