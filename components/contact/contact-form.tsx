@@ -57,11 +57,20 @@ export function ContactForm() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
 
-    // 実際の送信処理はここに実装
-    // 例: API Route への POST リクエスト
     try {
-      // シミュレート: 実際のAPI呼び出しに置き換えてください
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || '送信に失敗しました');
+      }
 
       toast.success('送信完了', {
         description: 'お問い合わせありがとうございます。近日中にご連絡いたします。',
@@ -70,7 +79,7 @@ export function ContactForm() {
       form.reset();
     } catch (error) {
       toast.error('送信エラー', {
-        description: '送信に失敗しました。時間をおいて再度お試しください。',
+        description: error instanceof Error ? error.message : '送信に失敗しました。時間をおいて再度お試しください。',
       });
     } finally {
       setIsSubmitting(false);
