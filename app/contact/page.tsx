@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { ContactForm } from '@/components/contact/contact-form';
 
 export const metadata: Metadata = {
-  title: 'Contact | Portfolio',
-  description: 'お仕事のご依頼やご質問など、お気軽にお問い合わせください。',
+  title: 'Contact',
+  description: '小峯海円へのお仕事のご依頼やご質問など、お気軽にお問い合わせください。',
 };
 
 export default function ContactPage() {

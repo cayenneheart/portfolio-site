@@ -3,8 +3,8 @@ import { WorkGrid } from '@/components/works/work-grid';
 import { works } from '@/data';
 
 export const metadata: Metadata = {
-  title: 'Works | Portfolio',
-  description: 'これまでに手がけたプロジェクトの一覧です。',
+  title: 'Works',
+  description: '小峯海円がこれまでに手がけたプロジェクト・作品の一覧です。',
 };
 
 export default function WorksPage() {
