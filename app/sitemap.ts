@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { works } from '@/data';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kaien-maimee.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kaien.maimee.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const workEntries = works.map((work) => ({

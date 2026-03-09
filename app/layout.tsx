@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kaien-maimee.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kaien.maimee.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
