@@ -25,7 +25,7 @@ export const profile: Profile = {
     },
     {
       platform: 'instagram',
-      url: 'https://www.instagram.com/retoolgxp/',
+      url: 'https://www.instagram.com/cayenneheart_',
       label: 'Instagram',
     },
   ],
