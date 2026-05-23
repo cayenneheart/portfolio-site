@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
 import { ContactForm } from '@/components/contact/contact-form';
+import { createPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Contact',
   description: '小峯海円へのお仕事のご依頼やご質問など、お気軽にお問い合わせください。',
-};
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (

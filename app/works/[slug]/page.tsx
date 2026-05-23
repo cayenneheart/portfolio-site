@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { works } from '@/data';
+import { createPageMetadata } from '@/lib/seo';
 
 interface WorkDetailPageProps {
   params: Promise<{
@@ -29,14 +30,15 @@ export async function generateMetadata({
 
   if (!work) {
     return {
-      title: 'Not Found | Portfolio',
+      title: '作品が見つかりません',
     };
   }
 
-  return {
-    title: `${work.title} | Works | Portfolio`,
+  return createPageMetadata({
+    title: `${work.title} | Works`,
     description: work.description,
-  };
+    path: `/works/${work.slug}`,
+  });
 }
 
 export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
