@@ -16,7 +16,9 @@ export const SITE = {
   shortDescription:
     '小峯海円のポートフォリオ。「おもろい人生にする」をモットーに活動する起業家・エンジニア。',
   twitterCreator: '@cayenneheart1',
-  googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
+  googleSiteVerification:
+    process.env.GOOGLE_SITE_VERIFICATION ||
+    'ysxUHXDxMRrsuBWcOXp32n4_zm1koOlaJxrE-mF4bnI',
   ogImage: {
     url: '/opengraph-image',
     width: 1200,
