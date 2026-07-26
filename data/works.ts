@@ -8,7 +8,15 @@ export const works: Work[] = [
     description:
       '国際イベントの参加者が、どの国・都市から集まったのかをリアルタイムの3D地球儀で可視化するWebアプリ。',
     thumbnail: '/images/works/event-interactive.png',
-    technologies: ['Next.js', 'Supabase', 'Realtime', '3D Globe', 'Vercel'],
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'Realtime',
+      'Three.js',
+      'Tailwind CSS',
+      'Vercel',
+    ],
     category: 'web',
     url: 'https://event-interactive.vercel.app',
     github: 'https://github.com/cayenneheart/event-interactive',
@@ -16,28 +24,37 @@ export const works: Work[] = [
     featured: true,
     content: `
 ## 概要
-国際イベントの会場で、参加者がどの国・都市から集まっているのかを一目で確認できるリアルタイム3D地球儀。主催者がイベントを作り、参加者は名前・国・任意の都市を入力するだけで共有画面へ反映される。
+国際イベントの会場で、参加者がどの国・都市から集まっているのかを一目で確認できるリアルタイム3D地球儀。主催者がイベントを作成し、参加者は会場のQRコードから出身地を登録する。登録された場所は共有画面へリアルタイムに反映される。
 
 ## コンセプト
-交流機能を増やすのではなく、「この会場に世界のどこから人が集まったかを、かっこよく可視化する」ことだけに集中。DM・マッチング・プロフィール・抽選・スケジュールなどの機能は公開版から外し、イベント会場で迷わず使える体験に整理した。
+交流機能を増やすのではなく、「この会場に世界のどこから人が集まったかを、かっこよく可視化する」ことだけに集中。スクリーンに浮かぶ光と都市名から、同じ場所に集まった人々の距離や広がりを直感的に感じられる体験を目指した。
+
+## 体験の流れ
+- 主催者がGoogleでログインし、イベント名と公開URLを設定
+- 自動生成された参加用QRコードを受付やスクリーンに掲示
+- 参加者が名前またはニックネーム、国、任意の都市を登録
+- 会場の共有画面へ出身地が現れ、人数・国数・都市数もリアルタイムに更新
 
 ## 主な機能
-- イベント作成・管理: 主催者がGoogleログイン後にイベントを作成し、共有URLとQRコードを発行
-- かんたん参加登録: 名前またはニックネーム、国、任意の都市だけを入力
-- リアルタイム地球儀: 参加状況をイベント単位で即時更新し、国・都市の広がりを3D表示
-- 主催者向け管理: 登録人数の確認と、不適切な表示の削除
+- イベント作成・管理: 開催日時と共有URLを設定し、複数イベントを主催者画面から管理
+- QR参加: イベントごとの参加用QRコードを画面表示・印刷
+- リアルタイム地球儀: 参加者の国・都市を光点とラベルで3D表示
+- ステージ表示: 会場スクリーン向けの全画面ビュー
+- 主催者ダッシュボード: 参加人数・国数・都市数と登録内容を確認し、必要に応じて表示を削除
 
-## 公開品質への取り組み
-- 参加者データをイベント単位で分離し、公開画面からDB全体を直接参照しない構成
-- 登録・再取得処理へ入力検証とレート制限を実装
-- Realtimeでは参加者情報そのものではなく、イベント別の更新通知だけを配信
-- 終了した機能の画面・API・サーバー処理を公開経路から閉鎖
+## 仕組み
+- Next.jsのServer ComponentsとServer Actionsを通して、イベント単位のデータだけを取得・更新
+- Supabase Realtimeのイベント別通知を受け、地球儀の表示データを再取得
+- Google OAuthで主催者を認証し、参加者はログインなしで登録可能
+- Zodによる入力検証、共有レート制限、署名済みHttpOnly Cookieで公開イベントを保護
 
 ## 技術スタック
-- Next.js 16 / React 19 / TypeScript
-- Supabase（PostgreSQL・Auth・Realtime）
-- Three.js / react-globe.gl
-- Vercel
+- フロントエンド: Next.js 16（App Router）/ React 19 / TypeScript
+- UI: Tailwind CSS 4 / Base UI
+- 3D可視化: Three.js / react-globe.gl
+- バックエンド: Supabase（PostgreSQL / Google Auth / Realtime / SSR）
+- 入力・QR: Zod / qrcode
+- ホスティング: Vercel
     `,
   },
   {
