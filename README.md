@@ -54,7 +54,7 @@ GOOGLE_SITE_VERIFICATION=...
 RESEND_API_KEY=...
 ```
 
-問い合わせメールの送信先は `contactcayenneheart@gmail.com` です。
+問い合わせメールの送信先は `cayenneheart@gmail.com` です。
 
 ## 検証
 

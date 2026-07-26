@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     icon: Mail,
-    href: 'mailto:contactcayenneheart@gmail.com',
+    href: 'mailto:cayenneheart@gmail.com',
     label: 'Email',
     external: false,
   },

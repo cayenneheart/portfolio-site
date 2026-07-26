@@ -58,6 +58,47 @@ export const works: Work[] = [
     `,
   },
   {
+    id: '6',
+    slug: 'sushi-drive-night',
+    title: 'SusHi Drive Night',
+    description:
+      '日本文化体験と国際的なスタートアップ交流をつなぐイベントに、運営メンバーとして企画・準備とLP制作で参加。',
+    thumbnail: '/images/works/sushi-drive-night.png',
+    technologies: [
+      'イベント企画',
+      'グローバルコミュニティ',
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Framer Motion',
+      'Vercel',
+    ],
+    category: 'event',
+    url: 'https://sushi-drive-night.vercel.app',
+    github: 'https://github.com/cayenneheart/sushi-drive-night-lp',
+    startDate: '2026-04',
+    featured: true,
+    content: `
+## 概要
+SusHi Tech Tokyo 2026に合わせて開催する、日本文化体験と国際的なスタートアップ交流を一晩でつなぐサイドイベント。運営メンバーとして企画・準備に参加し、イベントの世界観と参加価値を伝える日英対応LPを制作した。
+
+## 取り組んだこと
+- イベントのコンセプトと参加体験をチームで設計
+- 日本文化、起業家、投資家、エコシステム関係者が自然に交わる場づくり
+- 日英を切り替えられるイベントLPの設計・実装
+- 写真、タイポグラフィ、モーションを組み合わせた世界観の表現
+
+## Networking Globeを開発した理由
+国際イベントでは、隣にいる参加者がどの国や都市から来たのか分かるだけで、会話のきっかけが生まれる。一方で、名札や自己紹介だけでは会場全体に集まった人々の広がりを一目で捉えられない。このイベント体験を考えたことをきっかけに、参加者の出身地をリアルタイムの3D地球儀で可視化するNetworking Globeを開発した。
+
+## 技術スタック
+- フロントエンド: Next.js 16 / React 19 / TypeScript
+- UI: Tailwind CSS 4
+- モーション: Framer Motion
+- ホスティング: Vercel
+    `,
+  },
+  {
     id: '1',
     slug: 'axeler',
     title: 'AXeler',

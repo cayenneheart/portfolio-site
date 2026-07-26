@@ -71,7 +71,7 @@ test('現在の開発領域と大学1年時の実績をプロフィールに掲�
   assert.match(careerSource, /青学のビジネスコンテスト/);
 });
 
-test('Difyを公開画面から外し、新しい連絡先へ統一する', async () => {
+test('Difyを公開画面から外し、普段使う連絡先へ統一する', async () => {
   const [layoutSource, footerSource, contactApiSource, worksSource] =
     await Promise.all([
       readFile(new URL('app/layout.tsx', projectRoot), 'utf8'),
@@ -82,9 +82,36 @@ test('Difyを公開画面から外し、新しい連絡先へ統一する', asyn
 
   assert.doesNotMatch(layoutSource, /ChatWidget|DIFY/);
   assert.doesNotMatch(worksSource, /Dify|AIチャット/);
-  assert.match(footerSource, /mailto:contactcayenneheart@gmail\.com/);
-  assert.match(contactApiSource, /to: \['contactcayenneheart@gmail\.com'\]/);
+  assert.match(footerSource, /mailto:cayenneheart@gmail\.com/);
+  assert.match(contactApiSource, /to: \['cayenneheart@gmail\.com'\]/);
+  assert.doesNotMatch(footerSource, /contactcayenneheart@gmail\.com/);
+  assert.doesNotMatch(contactApiSource, /contactcayenneheart@gmail\.com/);
   assert.match(footerSource, /external: false/);
+});
+
+test('SusHi Drive NightをEvent Interactiveにつながるチーム活動として掲載する', async () => {
+  const worksSource = await readFile(new URL('data/works.ts', projectRoot), 'utf8');
+  const imageUrl = new URL(
+    'public/images/works/sushi-drive-night.png',
+    projectRoot
+  );
+
+  assert.match(worksSource, /slug: 'sushi-drive-night'/);
+  assert.match(worksSource, /title: 'SusHi Drive Night'/);
+  assert.match(worksSource, /運営メンバー/);
+  assert.match(worksSource, /Networking Globeを開発/);
+  assert.match(
+    worksSource,
+    /url: 'https:\/\/sushi-drive-night\.vercel\.app'/
+  );
+  assert.match(
+    worksSource,
+    /github: 'https:\/\/github\.com\/cayenneheart\/sushi-drive-night-lp'/
+  );
+  assert.doesNotMatch(worksSource, /PhysicalSkill|どすこいオンライン|pmap/);
+
+  await access(imageUrl);
+  assert.ok((await stat(imageUrl)).size > 100_000);
 });
 
 test('作品本文のMarkdown記号を露出させず、サイト自身を現在の構成で紹介する', async () => {
