@@ -40,3 +40,63 @@ test('公開コンテンツ更新日を掲載日に合わせる', async () => {
   const seoSource = await readFile(new URL('lib/seo.ts', projectRoot), 'utf8');
   assert.match(seoSource, /SITE_LAST_MODIFIED = '2026-07-26'/);
 });
+
+test('現在の開発領域と大学1年時の実績をプロフィールに掲載する', async () => {
+  const [skillsSource, profileSource, careerSource] = await Promise.all([
+    readFile(new URL('data/skills.ts', projectRoot), 'utf8'),
+    readFile(new URL('data/profile.ts', projectRoot), 'utf8'),
+    readFile(new URL('data/career.ts', projectRoot), 'utf8'),
+  ]);
+
+  assert.match(skillsSource, /AI Engineering \/ FDE/);
+  for (const skill of [
+    'Hermes AI Loop Engineering',
+    'Codex',
+    'Flutter',
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Vercel',
+    'Supabase',
+    'Cloudflare',
+    'Obsidian',
+  ]) {
+    assert.match(skillsSource, new RegExp(skill.replace('.', '\\.')));
+  }
+  assert.doesNotMatch(skillsSource, /バイブコーディング|ノーコード|Cursor|FlutterFlow|Dify/);
+  assert.match(profileSource, /大学1年の夏/);
+  assert.match(profileSource, /ビジネスコンテストKING/);
+  assert.match(profileSource, /青学のビジネスコンテスト/);
+  assert.match(profileSource, /筑波大学起業サークルを創立/);
+  assert.match(careerSource, /青学のビジネスコンテスト/);
+});
+
+test('Difyを公開画面から外し、新しい連絡先へ統一する', async () => {
+  const [layoutSource, footerSource, contactApiSource, worksSource] =
+    await Promise.all([
+      readFile(new URL('app/layout.tsx', projectRoot), 'utf8'),
+      readFile(new URL('components/layout/footer.tsx', projectRoot), 'utf8'),
+      readFile(new URL('app/api/contact/route.ts', projectRoot), 'utf8'),
+      readFile(new URL('data/works.ts', projectRoot), 'utf8'),
+    ]);
+
+  assert.doesNotMatch(layoutSource, /ChatWidget|DIFY/);
+  assert.doesNotMatch(worksSource, /Dify|AIチャット/);
+  assert.match(footerSource, /mailto:contactcayenneheart@gmail\.com/);
+  assert.match(contactApiSource, /to: \['contactcayenneheart@gmail\.com'\]/);
+  assert.match(footerSource, /external: false/);
+});
+
+test('作品本文のMarkdown記号を露出させず、サイト自身を現在の構成で紹介する', async () => {
+  const worksSource = await readFile(new URL('data/works.ts', projectRoot), 'utf8');
+  const imageUrl = new URL('public/images/works/portfolio.png', projectRoot);
+
+  assert.doesNotMatch(worksSource, /\*\*/);
+  assert.doesNotMatch(worksSource, /バイブコーディング/);
+  assert.match(worksSource, /thumbnail: '\/images\/works\/portfolio\.png'/);
+  assert.match(worksSource, /App Router/);
+  assert.match(worksSource, /React Hook Form/);
+  assert.match(worksSource, /Resend/);
+  await access(imageUrl);
+  assert.ok((await stat(imageUrl)).size > 100_000);
+});

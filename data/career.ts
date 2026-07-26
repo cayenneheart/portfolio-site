@@ -35,14 +35,14 @@ export const careerHistory: CareerItem[] = [
   },
   {
     id: '4',
-    title: 'ビジネスコンテストKING 3位入賞',
+    title: 'ビジネスコンテスト入賞',
     company: '',
     description:
-      '夏休みに参加したビジネスコンテストで3位を獲得。ビジネスアイデアの構築力と発表力を磨く。',
+      '大学1年の夏にビジネスコンテストKINGで3位、青学のビジネスコンテストでも入賞。事業構想、チームでの仮説検証、ピッチを実践した。',
     startDate: '2024-08',
     endDate: '2024-08',
     current: false,
-    technologies: ['事業企画', 'ピッチ', 'チームビルディング'],
+    technologies: ['KING 3位', '青学ビジネスコンテスト', 'ピッチ'],
   },
   {
     id: '5',

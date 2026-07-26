@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kaien Portfolio
 
-## Getting Started
+小峯海円の経歴、事業、コミュニティ活動、開発作品をまとめた個人ポートフォリオです。
 
-First, run the development server:
+**本番環境:** https://kaien.mai-mee.com
+
+## 主な機能
+
+- プロフィール、Skills、経歴タイムライン、作品一覧
+- データから静的生成する作品詳細ページ
+- ダークモードとレスポンシブレイアウト
+- React Hook FormとZodによる問い合わせフォーム
+- Resendを使った問い合わせメール送信
+- canonical、sitemap、robots、JSON-LD、OG画像のSEO設定
+
+## 技術スタック
+
+| 分類 | 技術 |
+| --- | --- |
+| フロントエンド | Next.js 16（App Router）、React 19、TypeScript |
+| UI | Tailwind CSS 4、shadcn/ui、Radix UI |
+| フォーム | React Hook Form、Zod |
+| モーション | Framer Motion |
+| メール送信 | Resend |
+| ホスティング | Vercel |
+
+## コンテンツ管理
+
+公開内容は次のデータファイルで管理します。
+
+- `data/profile.ts`: プロフィールとSNS
+- `data/skills.ts`: Skillsの分類と習熟度
+- `data/career.ts`: 経歴タイムライン
+- `data/works.ts`: 作品一覧と詳細本文
+
+作品画像は `public/images/works/` に16:9で配置します。詳細本文の簡易レンダラーはインラインMarkdownを解釈しないため、装飾記号ではなくプレーンテキストを使います。
+
+## ローカル起動
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000` を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 環境変数
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`.env.example` を参考に設定します。
 
-## Learn More
+```text
+NEXT_PUBLIC_SITE_URL=https://kaien.mai-mee.com
+GOOGLE_SITE_VERIFICATION=...
+RESEND_API_KEY=...
+```
 
-To learn more about Next.js, take a look at the following resources:
+問い合わせメールの送信先は `contactcayenneheart@gmail.com` です。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 検証
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm test
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+公開前にPCとモバイルの両方でホーム、Works、作品詳細、Contactを確認します。

@@ -128,7 +128,7 @@ export function ChatWidget({ difyAppId }: ChatWidgetProps) {
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isOpen]);
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3">

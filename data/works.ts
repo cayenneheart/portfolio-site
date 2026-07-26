@@ -77,8 +77,8 @@ export const works: Work[] = [
 「日本一仮説検証を回す」- ユーザーの声を重視し、本質的価値の提供を通じて信頼される企業を目指す。
 
 ## 事業内容
-- **POC伴走支援**: 概念実証を伴走しながらサポート
-- **ITサービス開発**: AIを活用したサービス開発
+- POC伴走支援: 概念実証を伴走しながらサポート
+- ITサービス開発: AIを活用したサービス開発
 
 ## コアバリュー
 - 情熱・興味に夢中になる姿勢
@@ -108,9 +108,9 @@ export const works: Work[] = [
 「本気で夢を語り合える場所を作る」をミッションに、筑波大学の起業サークルを大学1年時に設立。新しいアイデアから実際の起業まで、挑戦する学生をサポートするコミュニティ。
 
 ## 活動内容
-- **アイデアソン**: 定期開催で創造的思考力を養成。様々な課題に対して革新的ソリューションを生み出す
-- **ハッカソン**: プログラミングサークルと連携しながらプロトタイプ開発を実施
-- **イベント参加**: クロスジャンルJAMや交流会など、多様な分野の学生との交流を推進
+- アイデアソン: 定期開催で創造的思考力を養成。様々な課題に対して新しい解決策を生み出す
+- ハッカソン: プログラミングサークルと連携しながらプロトタイプ開発を実施
+- イベント参加: クロスジャンルJAMや交流会など、多様な分野の学生との交流を推進
 
 ## 実績
 - アクティブメンバー: 15名以上
@@ -139,11 +139,11 @@ TIB（Tokyo Innovation Base）主催の北欧派遣プログラムに応募・�
 「心理的安全性のある挑戦文化」をどう社会実装しているのか学ぶ
 
 ## 主な活動
-- **Slush参加（11/19-20）**: 起業家・投資家とのネットワーキング、ピッチコンテスト視聴、スタートアップブース訪問
-- **Aalto大学訪問**: 学生主導のスタートアップエコシステム「Aaltoes」について学ぶ
-- **demola社との意見交換**: 課題にフォーカスしたプログラム設計について
-- **maria 01訪問**: スタートアップ施設での起業家との座談会
-- **日本企業のブース手伝い**: 英語での説明・名刺交換
+- Slush参加（11/19-20）: 起業家・投資家とのネットワーキング、ピッチコンテスト視聴、スタートアップブース訪問
+- Aalto大学訪問: 学生主導のスタートアップエコシステム「Aaltoes」について学ぶ
+- demola社との意見交換: 課題にフォーカスしたプログラム設計について
+- maria 01訪問: スタートアップ施設での起業家との座談会
+- 日本企業のブース手伝い: 英語での説明・名刺交換
 
 ## 学び・気づき
 - フィンランドのスタートアップ文化は、Nokia買収をきっかけに若い世代が危機感を持ち、学生主導で作られてきた
@@ -161,29 +161,51 @@ TIB（Tokyo Innovation Base）主催の北欧派遣プログラムに応募・�
     slug: 'portfolio-site',
     title: 'ポートフォリオサイト',
     description:
-      'Claude Codeを使ってバイブコーディングで作成したポートフォリオサイト。Next.js + shadcn/ui。',
-    thumbnail: '/images/works/portfolio.svg',
-    technologies: ['Claude Code', 'Next.js', 'Tailwind CSS', 'shadcn/ui', 'Dify'],
+      '経歴、プロジェクト、技術領域を一つにまとめ、公開情報をデータから継続更新できる個人ポートフォリオ。',
+    thumbnail: '/images/works/portfolio.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Framer Motion',
+      'Resend',
+      'Vercel',
+    ],
     category: 'web',
+    url: 'https://kaien.mai-mee.com',
     github: 'https://github.com/cayenneheart/portfolio-site',
     startDate: '2025-02',
     featured: false,
     content: `
 ## 概要
-このポートフォリオサイト自体。Claude Codeを使ったバイブコーディングで作成。
+小峯海円の経歴、事業、コミュニティ活動、開発作品を一つの場所にまとめたポートフォリオサイト。プロフィールや作品情報をデータとして管理し、新しい活動を継続的に追加できる構成にしている。
 
-## 特徴
-- レスポンシブデザイン
-- ダークモード対応
-- AIチャット（Dify統合）
-- モダンなUI/UX
+## 主な機能
+- プロフィール、経歴、Skills、Worksを一つのストーリーとして掲載
+- 作品ごとの詳細ページ、公開サイト、GitHubへの導線
+- PC・タブレット・モバイルに対応したレスポンシブレイアウト
+- システム設定と連動するダークモード
+- 入力検証とメール送信を備えた問い合わせフォーム
+- canonical、sitemap、robots、JSON-LD、OG画像を含むSEO設定
+
+## 実装
+- Next.js App Routerの静的生成で、作品一覧と詳細ページを高速配信
+- TypeScriptの型定義とデータファイルで、プロフィール・経歴・作品を一元管理
+- shadcn/uiとRadix UIを基礎に、紫を軸としたUIへ統一
+- Framer Motionによるスクロール連動アニメーション
+- React Hook FormとZodによる問い合わせ内容の検証
+- Resendを使った問い合わせメール送信
+- Node.js標準テスト、ESLint、本番ビルド、ブラウザ視覚確認を公開前に実行
 
 ## 技術スタック
-- Next.js 16
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Framer Motion
+- フロントエンド: Next.js 16（App Router）/ React 19 / TypeScript
+- UI: Tailwind CSS 4 / shadcn/ui / Radix UI
+- フォーム: React Hook Form / Zod
+- モーション: Framer Motion
+- メール送信: Resend
+- ホスティング: Vercel
     `,
   },
 ];

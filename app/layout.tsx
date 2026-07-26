@@ -5,7 +5,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/sonner';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { ChatWidget } from '@/components/chat/chat-widget';
 import {
   DEFAULT_KEYWORDS,
   SITE,
@@ -97,7 +96,6 @@ export default function RootLayout({
             </div>
           </TooltipProvider>
           <Toaster richColors position="top-right" />
-          <ChatWidget difyAppId={process.env.NEXT_PUBLIC_DIFY_APP_ID || ''} />
         </ThemeProvider>
       </body>
     </html>

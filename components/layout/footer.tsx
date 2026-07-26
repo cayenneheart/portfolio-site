@@ -1,11 +1,30 @@
-import Link from 'next/link';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/cayenneheart', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com/cayenneheart1', label: 'Twitter' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/kaien-komine-07a31a338/', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:cayenneheart@gmail.com', label: 'Email' },
+  {
+    icon: Github,
+    href: 'https://github.com/cayenneheart',
+    label: 'GitHub',
+    external: true,
+  },
+  {
+    icon: Twitter,
+    href: 'https://twitter.com/cayenneheart1',
+    label: 'Twitter',
+    external: true,
+  },
+  {
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/kaien-komine-07a31a338/',
+    label: 'LinkedIn',
+    external: true,
+  },
+  {
+    icon: Mail,
+    href: 'mailto:contactcayenneheart@gmail.com',
+    label: 'Email',
+    external: false,
+  },
 ];
 
 export function Footer() {
@@ -17,16 +36,16 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <Link
+              <a
                 key={link.label}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
                 className="text-muted-foreground transition-colors hover:text-foreground"
                 aria-label={link.label}
               >
                 <link.icon className="h-5 w-5" />
-              </Link>
+              </a>
             ))}
           </div>
           <p className="text-sm text-muted-foreground">

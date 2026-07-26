@@ -65,6 +65,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
             src={work.thumbnail}
             alt={work.title}
             fill
+            sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover"
             priority
           />
