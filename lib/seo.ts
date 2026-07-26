@@ -4,7 +4,7 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://kaien.mai-mee.com'
 ).replace(/\/$/, '');
 
-export const SITE_LAST_MODIFIED = '2026-05-23';
+export const SITE_LAST_MODIFIED = '2026-07-25';
 
 export const SITE = {
   name: '小峯海円 Portfolio',

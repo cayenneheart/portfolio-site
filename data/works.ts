@@ -2,6 +2,45 @@ import { Work } from '@/types';
 
 export const works: Work[] = [
   {
+    id: '5',
+    slug: 'event-interactive',
+    title: 'Networking Globe',
+    description:
+      '国際イベントの参加者が、どの国・都市から集まったのかをリアルタイムの3D地球儀で可視化するWebアプリ。',
+    thumbnail: '/images/works/event-interactive.png',
+    technologies: ['Next.js', 'Supabase', 'Realtime', '3D Globe', 'Vercel'],
+    category: 'web',
+    url: 'https://event-interactive.vercel.app',
+    github: 'https://github.com/cayenneheart/event-interactive',
+    startDate: '2026-04',
+    featured: true,
+    content: `
+## 概要
+国際イベントの会場で、参加者がどの国・都市から集まっているのかを一目で確認できるリアルタイム3D地球儀。主催者がイベントを作り、参加者は名前・国・任意の都市を入力するだけで共有画面へ反映される。
+
+## コンセプト
+交流機能を増やすのではなく、「この会場に世界のどこから人が集まったかを、かっこよく可視化する」ことだけに集中。DM・マッチング・プロフィール・抽選・スケジュールなどの機能は公開版から外し、イベント会場で迷わず使える体験に整理した。
+
+## 主な機能
+- イベント作成・管理: 主催者がGoogleログイン後にイベントを作成し、共有URLとQRコードを発行
+- かんたん参加登録: 名前またはニックネーム、国、任意の都市だけを入力
+- リアルタイム地球儀: 参加状況をイベント単位で即時更新し、国・都市の広がりを3D表示
+- 主催者向け管理: 登録人数の確認と、不適切な表示の削除
+
+## 公開品質への取り組み
+- 参加者データをイベント単位で分離し、公開画面からDB全体を直接参照しない構成
+- 登録・再取得処理へ入力検証とレート制限を実装
+- Realtimeでは参加者情報そのものではなく、イベント別の更新通知だけを配信
+- 終了した機能の画面・API・サーバー処理を公開経路から閉鎖
+
+## 技術スタック
+- Next.js 16 / React 19 / TypeScript
+- Supabase（PostgreSQL・Auth・Realtime）
+- Three.js / react-globe.gl
+- Vercel
+    `,
+  },
+  {
     id: '1',
     slug: 'axeler',
     title: 'AXeler',
